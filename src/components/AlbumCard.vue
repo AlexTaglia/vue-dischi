@@ -2,12 +2,11 @@
   <div >
 
       <img 
-        class="img-fluid"
         :src="album.poster" 
         :alt="`Album title: ${album.title}, Author: ${album.author}`">
-      <div><h4>{{album.title}}</h4></div>
-      <div><h5>{{album.author}}</h5></div>
-      <div><h5>{{album.year}}</h5></div>
+      <div><h5>{{album.title}}</h5></div>
+      <div><h6>{{album.author}}</h6></div>
+      <div><h6>{{album.year}}</h6></div>
 
       <!-- <div>{{album.genre}}</div> -->
     </div>
@@ -29,12 +28,15 @@
 
     img{
      padding-bottom: 24px; 
-    }
-    h4{
-      color: $text-white
+     width: 100%;
     }
     h5{
+      color: $text-white;
+      text-transform: uppercase;
+    }
+    h6{
       color: $text-gray;
+      margin-bottom: 0;
     }
 
 

@@ -34,7 +34,9 @@
   @import "./style/app.scss";
 
   #app{
-    background-color: $bg-primary ;
+    background-color: $bg-primary;
+    overflow-y:auto;
+
   }
 
 </style>

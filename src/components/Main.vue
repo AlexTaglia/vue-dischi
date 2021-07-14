@@ -1,18 +1,15 @@
 <template>
-  <div class="container">
-    <main class="d-flex flex-wrap">
-      <AlbumCard 
+  <main class="container d-flex flex-wrap">
+    <AlbumCard 
       class="col-5 album-card"
       v-for="(album, index) in albums" 
       :key="index"
       :album="album"/>
-    </main>
-  </div>
+  </main>
 </template>
 
 <script>
   import AlbumCard from '../components/AlbumCard'
-
 
   export default {
     name: 'Main',
@@ -31,9 +28,10 @@
 
   main{
     background-color: $bg-primary ;
-    
+    height: calc(100vh - 86px);
+
+        
     .album-card{
-      width: calc(100%/5);
       text-align: center;
       background-color: $bg-secondary;
       padding: 14px;
