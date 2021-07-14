@@ -31,7 +31,10 @@
 </script>
 
 <style lang="scss">
-  @import "./style/app.scss"
+  @import "./style/app.scss";
 
+  #app{
+    background-color: $bg-primary ;
+  }
 
 </style>

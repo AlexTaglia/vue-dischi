@@ -1,1 +1,5 @@
-@import "color"
+@import "color";
+
+.col-5{
+    width: calc(100% / 5);
+}
