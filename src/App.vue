@@ -38,7 +38,7 @@
         
         this.albums.forEach((albums) => {
           if(!genreList.includes(albums.genre)){
-            // genreList.push(albums.genre);
+            genreList.push(albums.genre);
             this.genreList.push(albums.genre);
           }
         }); 
