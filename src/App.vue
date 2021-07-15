@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :genreList="genreList" />
     <Main :albums="albums" :loaded="loaded"/>
   </div>
 </template>
@@ -19,14 +19,30 @@
       data: function(){
       return{
         albums:[],
-        loaded: false
+        loaded: false,
+        genreList: [],
       }
     },
     created() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
       this.albums = result.data.response;
       this.loaded = result.data.success
-      })
+      });
+     
+    },
+    computed: {
+      getGenresList: function() {
+        const genreList = [];
+        
+        this.albums.forEach((albums) => {
+          if(!genreList.includes(albums.genre)){
+            genreList.push(albums.genre);
+            this.genreList.push(albums.genre);
+          }
+        }); 
+          return genreList;
+      },
+
     }
   }
 </script>

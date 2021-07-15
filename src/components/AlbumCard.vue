@@ -8,17 +8,16 @@
       <div><h6>{{album.author}}</h6></div>
       <div><h6>{{album.year}}</h6></div>
 
-      <!-- <div>{{album.genre}}</div> -->
-    </div>
+  </div>
 
 </template>
 
 <script>
   export default {
     name: 'AlbumCard',
-      props: {
+    props: {
         album: Object,
-      }
+    },
   }
 </script>
 
