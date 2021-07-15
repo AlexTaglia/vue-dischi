@@ -1,12 +1,11 @@
 <template>
   <header class="d-flex justify-content-between">
-    <img src="../assets/logo.png" alt="">
+    <img src="../assets/logo.png" alt="Spotify logo">
  
     <select 
-      class="form-control" 
       v-model="selectedGenre"
-      @change="$emit('selectGen', selectedGenre)">
-        <option disabled value="">Select the genre</option>
+      @change="$emit('select', selectedGenre)">
+        <option value="">Select the genre</option>
         <option 
           v-for="(genre,index) in genreList" 
           :key="index">
@@ -20,14 +19,15 @@
 <script>
 export default {
   name: 'Header',
-  data(){
+  
+  data () {
     return {
       selectedGenre: '',
     }
   },
+  
   props: {
-    albums: Object,
-    genreList: Array
+    genreList: Array,
   }
 }
 </script>

@@ -46,6 +46,7 @@
       background-color: $bg-secondary;
       padding: 14px;
       margin: 20px;
+      height: 350px;
     }
 
   }

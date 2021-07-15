@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
 
       <img 
         :src="album.poster" 
