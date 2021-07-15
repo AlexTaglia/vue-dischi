@@ -2,7 +2,10 @@
   <header class="d-flex justify-content-between">
     <img src="../assets/logo.png" alt="">
  
-    <select class="form-control" v-model="selected">
+    <select 
+      class="form-control" 
+      v-model="selectedGenre"
+      @change="$emit('selectGen', selectedGenre)">
         <option disabled value="">Select the genre</option>
         <option 
           v-for="(genre,index) in genreList" 
@@ -19,8 +22,8 @@ export default {
   name: 'Header',
   data(){
     return {
-      selected: ''
-      }
+      selectedGenre: '',
+    }
   },
   props: {
     albums: Object,

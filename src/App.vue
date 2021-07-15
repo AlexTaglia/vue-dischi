@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header :genreList="genreList" />
-    <Main :albums="albums" :loaded="loaded"/>
+    <Header @selectGen="selectedGenre" :genreList="genreList" />
+    <Main :albums="filteredGenreList" :loaded="loaded"/>
   </div>
 </template>
 
@@ -21,12 +21,14 @@
         albums:[],
         loaded: false,
         genreList: [],
+        filteredGenreList:[]
       }
     },
     created() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
       this.albums = result.data.response;
       this.loaded = result.data.success
+      this.filteredGenreList = result.data.response;
       });
      
     },
@@ -36,12 +38,18 @@
         
         this.albums.forEach((albums) => {
           if(!genreList.includes(albums.genre)){
-            genreList.push(albums.genre);
+            // genreList.push(albums.genre);
             this.genreList.push(albums.genre);
           }
         }); 
           return genreList;
       },
+
+      filteredGenre: function(selectedGenre) {
+        return this.filteredGenreList = this.albums.filter((element)=>{
+          return element.response.genre.includes(selectedGenre)
+        });
+     }
 
     }
   }
